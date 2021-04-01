@@ -1,0 +1,12 @@
+create table lista_telefonica (id_lista serial not null, nome varchar, telefone varchar, data_nascimento date, operadora integer, foreign key(operadora) references operadora(codigo));
+
+create table operadora (codigo integer not null, nome varchar, categoria varchar, preco decimal, primary key(codigo));
+
+select *from lista_telefonica;
+
+select *from operadora;
+
+insert into operadora values ('14', 'Oi', 'Celular', 2.00), ('15', 'Vivo', 'Celular', '4.00'), ('25', 'GVT', 'Fixo', '1.00');
+
+insert into lista_telefonica values (default, 'Pedro', '98355-3398', '23/12/2000', '14'), (default, 'Ronaldo', '3344-3398', '12/10/1990', '25'),
+(default, 'Maria', '99353-3392', '05/06/1992', '15');
